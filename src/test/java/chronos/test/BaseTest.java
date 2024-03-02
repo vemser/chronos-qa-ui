@@ -10,7 +10,7 @@ public class BaseTest {
 
     @Before
     public void abrirNavegador() {
-        seleniumFactory.initBrowser("");
+        seleniumFactory.initBrowser("https://chronos-front-one.vercel.app");
     }
 
     @After
