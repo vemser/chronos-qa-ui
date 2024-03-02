@@ -1,8 +1,8 @@
 package chronos.test;
 import chronos.page.BasePage;
 import io.qameta.allure.*;
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 import chronos.data.dto.LoginDTO;
 import chronos.data.factory.datafaker.LoginData;
 import chronos.page.LoginPage;
@@ -28,7 +28,7 @@ public class LoginTest extends BaseTest {
         LoginDTO loginValido = loginData.loginDadosValidos();
         loginPage.fazerLogin(loginValido.getUsername(), loginValido.getSenha());
         String mensagem = BasePage.lerTexto(GREETINGS_MENSAGEM);
-        Assert.assertEquals("Olá,", mensagem);
+        Assertions.assertEquals("Olá,", mensagem);
     };
 
     @Test
@@ -39,7 +39,7 @@ public class LoginTest extends BaseTest {
     public void validarLoginComDadosInvalidos() {
         LoginDTO loginInvalido = loginData.loginDadosDinamicos();
         String mensagem = loginPage.loginIncorreto(loginInvalido.getUsername(), loginInvalido.getSenha());
-        Assert.assertEquals("Login informado não segue o padrão @dbccompany.com.br", mensagem);
+        Assertions.assertEquals("Login informado não segue o padrão @dbccompany.com.br", mensagem);
     }
 
     @Test
@@ -52,8 +52,8 @@ public class LoginTest extends BaseTest {
         loginPage.fazerLogin(usuario.getUsername(), usuario.getSenha());
         String mensagemErroLogin = BasePage.lerTexto(LOGIN_MENSAGEM);
         String mensagemErroPassword = BasePage.lerTexto(PASSWORD_MENSAGEM);
-        Assert.assertEquals("Por favor, digite seu Login!", mensagemErroLogin);
-        Assert.assertEquals("Por favor, digite sua senha!", mensagemErroPassword);
+        Assertions.assertEquals("Por favor, digite seu Login!", mensagemErroLogin);
+        Assertions.assertEquals("Por favor, digite sua senha!", mensagemErroPassword);
     }
 
     @Test
@@ -65,7 +65,7 @@ public class LoginTest extends BaseTest {
         LoginDTO usuario = loginData.loginSenhaInvalida();
         loginPage.fazerLogin(usuario.getUsername(), usuario.getSenha());
         String mensagemErroPassword = BasePage.lerTexto(PASSWORD_MENSAGEM);
-        Assert.assertEquals("Por favor, digite sua senha!", mensagemErroPassword);
+        Assertions.assertEquals("Por favor, digite sua senha!", mensagemErroPassword);
     }
 
     @Test
@@ -77,6 +77,6 @@ public class LoginTest extends BaseTest {
         LoginDTO usuario = loginData.loginUsernameValido();
         loginPage.fazerLogin(usuario.getUsername(), usuario.getSenha());
         String mensagemErroLogin = BasePage.lerTexto(LOGIN_MENSAGEM);
-        Assert.assertEquals("Por favor, digite seu Login!", mensagemErroLogin);
+        Assertions.assertEquals("Por favor, digite seu Login!", mensagemErroLogin);
     }
 }
