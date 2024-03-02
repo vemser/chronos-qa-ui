@@ -3,7 +3,7 @@ package chronos.data.factory.seleniumfactory;
 
 
 import chronos.utils.ConfigProperties;
-import org.junit.After;
+import org.junit.jupiter.api.AfterEach;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
@@ -56,7 +56,7 @@ public class SeleniumService {
         }
     }
 
-    @After
+    @AfterEach
     public void tearDown() {
         driver.quit();
     }
