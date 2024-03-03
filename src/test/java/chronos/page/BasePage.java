@@ -12,11 +12,12 @@ import java.time.LocalDate;
 public class BasePage extends Elements {
 
     public static void preencherInput(By by, String text) {
+        esperarElemento(by);
         WebElement elemento = element(by);
+        elemento.sendKeys(Keys.chord(Keys.CONTROL, "a"));
+        elemento.sendKeys(Keys.DELETE);
         limparInput(by);
-        ((JavascriptExecutor) driver).executeScript("arguments[0].value = '';", elemento);
-        limparInput(by);
-        element(by).sendKeys(text);
+        elemento.sendKeys(text);
     }
 
     public static void clicar(By by) {

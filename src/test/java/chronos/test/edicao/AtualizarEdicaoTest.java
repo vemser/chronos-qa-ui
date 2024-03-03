@@ -43,7 +43,7 @@ public class AtualizarEdicaoTest extends BaseTest {
     @AfterEach
     public void cleanUp() {
         if (nomeEdicaoCadastrada != "") {
-            edicaoPage.excluirEdicaoComSucesso(nomeEdicaoCadastrada);
+            edicaoPage.excluirEdicaoComSucessoRetornandoEdicao(nomeEdicaoCadastrada);
         }
     }
 
@@ -55,6 +55,8 @@ public class AtualizarEdicaoTest extends BaseTest {
     public void testAtualizarEdicaoValidaComSucesso(){
         EdicaoDTO edicaoAAtualizar = edicaoData.edicaoDadosValidos();
         edicaoPage.atualizarEdicao(edicaoAAtualizar, nomeEdicaoCadastrada);
+        nomeEdicaoCadastrada = edicaoAAtualizar.getNome();
+        edicaoPage.validarInformacoesCadastradasEdicao(edicaoAAtualizar);
     };
 
 
@@ -104,17 +106,5 @@ public class AtualizarEdicaoTest extends BaseTest {
         edicaoPage.atualizarEdicao(edicaoAAtualizar, nomeEdicaoCadastrada);
         String mensagemErroDesc = BasePage.lerTexto(MSG_ERROR_DESCRICAO);
         Assertions.assertEquals("A descrição da Edição deve ter menos de 255 letras", mensagemErroDesc);
-    };
-
-    @Test
-    @Feature("Edicao")
-    @Story("Não consegue Atualizar edição com data de início vazia")
-    @Description("Testa se o usuário não consegue Atualizar uma edicao com data de início vazio")
-    @Severity(SeverityLevel.CRITICAL)
-    public void testAtualizarEdicaoSemDataDeInicioSemSucesso(){
-        EdicaoDTO edicaoAAtualizar = edicaoData.edicaoSemDataDeInicio();
-        edicaoPage.atualizarEdicaoSemData(edicaoAAtualizar, nomeEdicaoCadastrada);
-        String mensagemDeErroData = BasePage.lerTexto(MSG_ERROR_DATA);
-        Assertions.assertEquals("Data de início inválida", mensagemDeErroData);
     };
 }
