@@ -2,8 +2,11 @@ package chronos.data.factory.seleniumfactory;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+
+import java.time.LocalDate;
 
 public class Elements extends SeleniumService {
     // Método para pegar um elemento
@@ -14,6 +17,15 @@ public class Elements extends SeleniumService {
     // Método para esperar um elemento
     public static void esperarElemento(By by) {
         wait.until(ExpectedConditions.presenceOfElementLocated(by));
+    }
+
+    public static void limparInput(By by) {
+        WebElement elemento = element(by);
+        elemento.clear();
+    }
+
+    public static void esperarLimpar(By by) {
+        wait.until(ExpectedConditions.textToBePresentInElementValue(by, ""));
     }
     public static void esperarElementoSerVisivel(By by) {
         wait.until(ExpectedConditions.visibilityOfElementLocated(by));
