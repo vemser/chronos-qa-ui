@@ -1,5 +1,7 @@
 package chronos.page;
 
+import chronos.data.dto.LoginDTO;
+import chronos.data.factory.datafaker.LoginData;
 import org.openqa.selenium.By;
 
 public class LoginPage extends BasePage {
@@ -16,6 +18,12 @@ public class LoginPage extends BasePage {
     public void fazerLogin(String username, String senha) {
         preencherInput(CAMPO_LOGIN, username);
         preencherInput(CAMPO_SENHA, senha);
+        clicar(BTN_ACESSAR);
+    }
+
+    public void fazerLogin(LoginDTO loginDTO) {
+        preencherInput(CAMPO_LOGIN, loginDTO.getUsername());
+        preencherInput(CAMPO_SENHA, loginDTO.getSenha());
         clicar(BTN_ACESSAR);
     }
 
