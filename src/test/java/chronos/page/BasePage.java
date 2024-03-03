@@ -20,6 +20,12 @@ public class BasePage extends Elements {
         elemento.sendKeys(text);
     }
 
+    public static void limparInput(By by){
+        esperarElemento(by);
+        element(by).sendKeys(Keys.chord(Keys.CONTROL,"a"));
+        element(by).sendKeys(Keys.DELETE);
+    }
+
     public static void clicar(By by) {
         esperarElemento(by);
         element(by).click();
