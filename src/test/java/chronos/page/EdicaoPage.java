@@ -84,6 +84,7 @@ public class EdicaoPage extends BasePage {
     }
 
     public void excluirEdicaoComSucesso(String nomeEdicaoCadastrada) {
+        clicar(BTN_EDICAO_MENU_LATERAL);
         clicarElementoXPATH(nomeEdicaoCadastrada);
         clicar(BTN_EXCLUIR_EDICAO);
         clicarEsperandoSerClicavel(BTN_EXCLUIR_EDICAO_CONFIRMAR);
