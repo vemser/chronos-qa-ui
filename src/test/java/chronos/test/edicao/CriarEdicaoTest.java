@@ -45,7 +45,7 @@ public class CriarEdicaoTest extends BaseTest {
     }
 
     @Test
-    @Feature("Edicao")
+    @Feature("Edicao - UI")
     @Story("Criar edicao valida com sucesso")
     @Description("Testa se o usuário consegue criar uma edicao com dados validos")
     @Severity(SeverityLevel.CRITICAL)
@@ -58,7 +58,7 @@ public class CriarEdicaoTest extends BaseTest {
 
 
     @Test
-    @Feature("Edicao")
+    @Feature("Edicao - UI")
     @Story("Não consegue criar edição com nome vazio")
     @Description("Testa se o usuário não consegue criar uma edicao com nome vazio")
     @Severity(SeverityLevel.CRITICAL)
@@ -70,7 +70,7 @@ public class CriarEdicaoTest extends BaseTest {
     };
 
     @Test
-    @Feature("Edicao")
+    @Feature("Edicao - UI")
     @Story("Não consegue criar edição com nome com mais de 20 caracteres")
     @Description("Testa se o usuário não consegue criar uma edicao com nome com mais de 20 caracteres")
     @Severity(SeverityLevel.CRITICAL)
@@ -82,7 +82,7 @@ public class CriarEdicaoTest extends BaseTest {
     };
 
     @Test
-    @Feature("Edicao")
+    @Feature("Edicao - UI")
     @Story("Não consegue criar edição com nome com menos de 4 caracteres")
     @Description("Testa se o usuário não consegue criar uma edicao com nome com menos de 4 caracteres")
     @Severity(SeverityLevel.CRITICAL)
@@ -94,7 +94,7 @@ public class CriarEdicaoTest extends BaseTest {
     };
 
     @Test
-    @Feature("Edicao")
+    @Feature("Edicao - UI")
     @Story("Não consegue criar edição com descricao com mais de 255 caracteres")
     @Description("Testa se o usuário não consegue criar uma edicao com nome com descricao com mais de 255 caracteres")
     @Severity(SeverityLevel.CRITICAL)
@@ -106,7 +106,7 @@ public class CriarEdicaoTest extends BaseTest {
     };
 
     @Test
-    @Feature("Edicao")
+    @Feature("Edicao - UI")
     @Story("Não consegue criar edição com data de início vazia")
     @Description("Testa se o usuário não consegue criar uma edicao com data de início vazio")
     @Severity(SeverityLevel.CRITICAL)

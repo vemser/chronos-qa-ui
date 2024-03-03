@@ -41,7 +41,7 @@ public class DeletarEdicaoTest extends BaseTest {
     }
 
     @Test
-    @Feature("Edicao")
+    @Feature("Edicao - UI")
     @Story("Deletar edicao")
     @Description("Testa se o usuário consegue deletar uma edicao")
     @Severity(SeverityLevel.CRITICAL)
