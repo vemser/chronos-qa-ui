@@ -21,6 +21,21 @@ public class DataFakerGenerator {
         return faker.random().nextInt(1, 31 + 1);
     }
 
+    public String number(){
+        return  faker.number().digits(5);
+    }
+    public String number51(){
+        return  faker.number().digits(51);
+    }
+
+    public String number1(){
+        return  faker.number().digits(1);
+    }
+    public String number256(){
+        return  faker.number().digits(256);
+    }
+
+
     public int monthOfBirthFaker() {
         return faker.random().nextInt(1, 12 + 1);
     }

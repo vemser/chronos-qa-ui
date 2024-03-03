@@ -1,9 +1,6 @@
 package chronos.data.factory.seleniumfactory;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import java.time.LocalDate;
@@ -49,5 +46,14 @@ public class Elements extends SeleniumService {
     public static Boolean validarElementoNaTela(By by) {
         boolean validator = driver.findElement(by).isDisplayed();
         return validator;
+    }
+
+    public static boolean validarSeElementoExiste(By by){
+        try{
+            driver.findElement(by);
+            return true;
+        }catch (NoSuchElementException e){
+            return false;
+        }
     }
 }
