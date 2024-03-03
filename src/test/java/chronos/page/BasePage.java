@@ -2,11 +2,20 @@ package chronos.page;
 
 import chronos.data.factory.seleniumfactory.Elements;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+
+import java.time.LocalDate;
 
 public class BasePage extends Elements {
 
     public static void preencherInput(By by, String text) {
-        esperarElemento(by);
+        WebElement elemento = element(by);
+        limparInput(by);
+        ((JavascriptExecutor) driver).executeScript("arguments[0].value = '';", elemento);
+        limparInput(by);
         element(by).sendKeys(text);
     }
 
@@ -53,6 +62,29 @@ public class BasePage extends Elements {
             e.printStackTrace();
         }
     }
+
+    public static void selecionarData(By by, LocalDate dataASelecionar) {
+        String formattedDate = String.format("%02d/%02d/%d", dataASelecionar.getDayOfMonth(), dataASelecionar.getMonthValue(), dataASelecionar.getYear());
+        WebElement elemento = element(by);
+        elemento.sendKeys(formattedDate);
+    }
+
+    public static void irParaUrl(String url) {
+        driver.get(url);
+    }
+
+    public static void clicarElementoXPATH(String textoDoElemento) {
+        By selector = By.xpath("//*[text()='" + textoDoElemento + "']");
+        wait.until(ExpectedConditions.presenceOfElementLocated(selector));
+        WebElement elemento = driver.findElement(By.xpath("//*[text()='" + textoDoElemento + "']"));
+        elemento.click();
+    }
+
+    public static void selecionarString(By by, String stringASelecionar) {
+        WebElement elemento = element(by);
+        elemento.sendKeys(stringASelecionar);
+    }
+
 
     protected static boolean validator(By by){
         return validarElementoNaTela(by);
