@@ -71,10 +71,6 @@ public class EstagiarioPage extends BasePage {
         clicar(btnDisponivel);
         clicar(SELECT_ESTADO_ATUALIZAR);
         clicar(btnMG);
-        clicar(SELECT_EDICAO_ATUALIZAR);
-        clicar(btn1Edicao);
-        clicar(SELECT_TRILHAR_ATUALIZAR);
-        clicar(btn12Trilha);
         preencherInput(INPUT_NOME_ESTAGIARIO, estagiarioAAtualizar.getNome());
         preencherInput(INPUT_CURSO_ESTAGIARIO, estagiarioAAtualizar.getCurso());
         preencherInput(INPUT_INSTITUICAO, estagiarioAAtualizar.getInstituicao());
