@@ -6,18 +6,18 @@ public class DataFakerGenerator {
 
     private static final Faker faker = new Faker();
 
-    public String emailFaker() {
+    public static String emailFaker() {
         return faker.internet().emailAddress();
     }
-    public String senhaFaker() {
+    public static String senhaFaker() {
         return faker.internet().password();
     }
 
-    public String firstNameFaker() { return faker.name().firstName(); }
-    public String lastNameFaker() { return faker.name().lastName(); }
-    public String titleFaker() { return String.valueOf(faker.random().nextInt(2) + 1);}
+    public static String firstNameFaker() { return faker.name().firstName(); }
+    public static String lastNameFaker() { return faker.name().lastName(); }
+    public static String titleFaker() { return String.valueOf(faker.random().nextInt(2) + 1);}
 
-    public int dayOfBirthFaker() {
+    public static int dayOfBirthFaker() {
         return faker.random().nextInt(1, 31 + 1);
     }
 
@@ -36,18 +36,23 @@ public class DataFakerGenerator {
     }
 
 
-    public int monthOfBirthFaker() {
+    public static int monthOfBirthFaker() {
         return faker.random().nextInt(1, 12 + 1);
     }
-    public int yearOfBirthFaker() {
+    public static int yearOfBirthFaker() {
         return faker.random().nextInt(1, 126 + 1);
     }
 
-    public String ProdutoFaker(){
+    public static String ProdutoFaker(){
         return faker.commerce().productName();
     }
 
-    public String mensagemFaker() {
+    public static String mensagemFaker() {
         return faker.lorem().sentence();
     }
+    public static String evento() { return faker.company().name() + faker.letterify("??"); }
+    public static String description() { return faker.lorem().sentence(); }
+
+    public static String descricao256() { return faker.lorem().sentence(258);}
+    public static String nome50() { return faker.lorem().sentence(51);}
 }
