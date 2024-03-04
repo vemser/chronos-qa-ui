@@ -26,7 +26,7 @@ public class EstagiarioPage extends BasePage {
     public static final By btn1Edicao = By.xpath("//li[@data-value='1']");
     public static final By SELECT_TRILHA = By.cssSelector("#\\:r1f\\:");
     public static final By SELECT_TRILHAR_ATUALIZAR = By.cssSelector("#\\:r24\\:");
-    public static final By btn12Trilha = By.xpath("//li[@data-value='12']");
+    public static final By btn12Trilha = By.xpath("//li[@data-value='1']");
     private static final By btnDisponivel = By.xpath("//li[@data-value='DIS']");
     private static final By btnMG = By.xpath("//li[@data-value='MG']");
     public static final By INPUT_CIDADE = By.cssSelector("input[name=\"cidade\"]");
