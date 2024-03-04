@@ -35,9 +35,10 @@ public class ModuloPage extends BasePage {
 
     private static final By msgToast = By.xpath("//div[@role='alert']//div[2]");
 
+    private static final By fecharPopup = By.xpath("//button[@aria-label='close']");
+
     private static final By odernarPorID = By.xpath("//div[text()='ID']");
 
-    private static final By fecharPopup = By.xpath("//button[@aria-label='close']");
 
     // Tela de detalhes
 
