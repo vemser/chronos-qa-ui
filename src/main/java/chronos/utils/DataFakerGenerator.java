@@ -1,6 +1,6 @@
 package chronos.utils;
 
-import com.github.javafaker.Faker;
+import net.datafaker.Faker;
 
 public class DataFakerGenerator {
 

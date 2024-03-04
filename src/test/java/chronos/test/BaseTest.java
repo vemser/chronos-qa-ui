@@ -15,9 +15,9 @@ public class BaseTest {
         seleniumFactory.initBrowser("https://chronos-front-one.vercel.app");
     }
 
-//    @AfterEach
-//    public void fecharNavegador() throws InterruptedException {
-//        Thread.sleep(1000);
-//        seleniumFactory.tearDown();
-//    }
+    @AfterEach
+    public void fecharNavegador() throws InterruptedException {
+        Thread.sleep(1000);
+        seleniumFactory.tearDown();
+    }
 }

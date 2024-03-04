@@ -1,10 +1,7 @@
 package chronos.data.factory.datafaker;
 
 import chronos.data.dto.EdicaoDTO;
-import chronos.data.dto.LoginDTO;
-import chronos.utils.ConfigProperties;
-import chronos.utils.DataFakerGenerator;
-import com.github.javafaker.Faker;
+import net.datafaker.Faker;
 import org.apache.commons.lang3.StringUtils;
 
 import java.time.LocalDate;
