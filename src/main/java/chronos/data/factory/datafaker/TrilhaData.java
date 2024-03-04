@@ -33,4 +33,11 @@ public class TrilhaData {
                 .build();
     }
 
+    public static TrilhaCadastroDTO trilhaValidaEdicao(){
+        return TrilhaCadastroDTO.builder()
+                .nomeTrilha("trilha " + DataFakerGenerator.number())
+                .descricao(DataFakerGenerator.description())
+                .build();
+    }
+
 }

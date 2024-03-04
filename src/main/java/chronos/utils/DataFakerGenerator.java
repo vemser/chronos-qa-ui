@@ -21,7 +21,7 @@ public class DataFakerGenerator {
         return faker.random().nextInt(1, 31 + 1);
     }
 
-    public String number(){
+    public static String number(){
         return  faker.number().digits(5);
     }
     public String number51(){
