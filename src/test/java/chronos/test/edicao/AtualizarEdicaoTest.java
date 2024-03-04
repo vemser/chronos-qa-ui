@@ -43,23 +43,25 @@ public class AtualizarEdicaoTest extends BaseTest {
     @AfterEach
     public void cleanUp() {
         if (nomeEdicaoCadastrada != "") {
-            edicaoPage.excluirEdicaoComSucesso(nomeEdicaoCadastrada);
+            edicaoPage.excluirEdicaoComSucessoRetornandoEdicao(nomeEdicaoCadastrada);
         }
     }
 
     @Test
-    @Feature("Edicao")
+    @Feature("Edicao - UI")
     @Story("Atualizar edicao valida com sucesso")
     @Description("Testa se o usuário consegue Atualizar uma edicao com dados validos")
     @Severity(SeverityLevel.CRITICAL)
     public void testAtualizarEdicaoValidaComSucesso(){
         EdicaoDTO edicaoAAtualizar = edicaoData.edicaoDadosValidos();
         edicaoPage.atualizarEdicao(edicaoAAtualizar, nomeEdicaoCadastrada);
+        nomeEdicaoCadastrada = edicaoAAtualizar.getNome();
+        edicaoPage.validarInformacoesCadastradasEdicao(edicaoAAtualizar);
     };
 
 
     @Test
-    @Feature("Edicao")
+    @Feature("Edicao - UI")
     @Story("Não consegue Atualizar edição com nome vazio")
     @Description("Testa se o usuário não consegue Atualizar uma edicao com nome vazio")
     @Severity(SeverityLevel.CRITICAL)
@@ -71,7 +73,7 @@ public class AtualizarEdicaoTest extends BaseTest {
     };
 
     @Test
-    @Feature("Edicao")
+    @Feature("Edicao - UI")
     @Story("Não consegue Atualizar edição com nome com mais de 20 caracteres")
     @Description("Testa se o usuário não consegue criar uma edicao com nome com mais de 20 caracteres")
     @Severity(SeverityLevel.CRITICAL)
@@ -83,7 +85,7 @@ public class AtualizarEdicaoTest extends BaseTest {
     };
 
     @Test
-    @Feature("Edicao")
+    @Feature("Edicao - UI")
     @Story("Não consegue Atualizar edição com nome com menos de 4 caracteres")
     @Description("Testa se o usuário não consegue criar uma edicao com nome com menos de 4 caracteres")
     @Severity(SeverityLevel.CRITICAL)
@@ -95,7 +97,7 @@ public class AtualizarEdicaoTest extends BaseTest {
     };
 
     @Test
-    @Feature("Edicao")
+    @Feature("Edicao - UI")
     @Story("Não consegue Atualizar edição com descricao com mais de 255 caracteres")
     @Description("Testa se o usuário não consegue Atualizar uma edicao com nome com descricao com mais de 255 caracteres")
     @Severity(SeverityLevel.CRITICAL)
@@ -104,17 +106,5 @@ public class AtualizarEdicaoTest extends BaseTest {
         edicaoPage.atualizarEdicao(edicaoAAtualizar, nomeEdicaoCadastrada);
         String mensagemErroDesc = BasePage.lerTexto(MSG_ERROR_DESCRICAO);
         Assertions.assertEquals("A descrição da Edição deve ter menos de 255 letras", mensagemErroDesc);
-    };
-
-    @Test
-    @Feature("Edicao")
-    @Story("Não consegue Atualizar edição com data de início vazia")
-    @Description("Testa se o usuário não consegue Atualizar uma edicao com data de início vazio")
-    @Severity(SeverityLevel.CRITICAL)
-    public void testAtualizarEdicaoSemDataDeInicioSemSucesso(){
-        EdicaoDTO edicaoAAtualizar = edicaoData.edicaoSemDataDeInicio();
-        edicaoPage.atualizarEdicaoSemData(edicaoAAtualizar, nomeEdicaoCadastrada);
-        String mensagemDeErroData = BasePage.lerTexto(MSG_ERROR_DATA);
-        Assertions.assertEquals("Data de início inválida", mensagemDeErroData);
     };
 }

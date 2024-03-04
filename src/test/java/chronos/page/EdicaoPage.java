@@ -41,7 +41,7 @@ public class EdicaoPage extends BasePage {
         preencherInput(CAMPO_NOME, edicaoACadastrar.getNome());
         preencherInput(CAMPO_DESCRICAO, edicaoACadastrar.getDescricao());
         selecionarData(SELECT_DATA_INICIO, edicaoACadastrar.getDataInicial());
-        clicar(BTN_CRIAR_EDICAO);
+        clicarEsperandoSerClicavel(BTN_CRIAR_EDICAO);
     }
 
     public void atualizarEdicao(EdicaoDTO edicaoAAtualizar, String nomeEdicaoCadastrada) {
@@ -50,7 +50,7 @@ public class EdicaoPage extends BasePage {
         preencherInput(CAMPO_NOME, edicaoAAtualizar.getNome());
         preencherInput(CAMPO_DESCRICAO, edicaoAAtualizar.getDescricao());
         selecionarData(SELECT_DATA_INICIO, edicaoAAtualizar.getDataInicial());
-        clicar(BTN_EDITAR_EDICAO_CONFIRMAR);
+        clicarEsperandoSerClicavel(BTN_EDITAR_EDICAO_CONFIRMAR);
     }
 
     public void cadastrarEdicaoSemData(EdicaoDTO edicaoACadastrar) {
@@ -58,7 +58,7 @@ public class EdicaoPage extends BasePage {
         clicar(BTN_CADASTRAR_EDICAO);
         preencherInput(CAMPO_NOME, edicaoACadastrar.getNome());
         preencherInput(CAMPO_DESCRICAO, edicaoACadastrar.getDescricao());
-        clicar(BTN_CRIAR_EDICAO);
+        clicarEsperandoSerClicavel(BTN_CRIAR_EDICAO);
     }
 
     public void atualizarEdicaoSemData(EdicaoDTO edicaoACadastrar, String nomeEdicaoCadastrada) {
@@ -66,7 +66,7 @@ public class EdicaoPage extends BasePage {
         clicar(BTN_EDITAR_EDICAO);
         preencherInput(CAMPO_NOME, edicaoACadastrar.getNome());
         preencherInput(CAMPO_DESCRICAO, edicaoACadastrar.getDescricao());
-        clicar(BTN_EDITAR_EDICAO_CONFIRMAR);
+        clicarEsperandoSerClicavel(BTN_EDITAR_EDICAO_CONFIRMAR);
     }
 
 
@@ -80,12 +80,20 @@ public class EdicaoPage extends BasePage {
         Assertions.assertEquals(edicaoCadastrada.getDescricao(), textoDoElementoDescricaoEdicaoCadastrada);
         Assertions.assertEquals(formatarData.formatarData(edicaoCadastrada.getDataInicial()), textoDoElementoDataInicioEdicaoCadastrada);
         Assertions.assertEquals("Ativo", textoDoElementoStatusEdicaoCadastrada);
-        clicar(BTN_EDICAO_MENU_LATERAL);
+        clicarEsperandoSerClicavel(BTN_EDICAO_MENU_LATERAL);
     }
 
     public void excluirEdicaoComSucesso(String nomeEdicaoCadastrada) {
+        clicar(BTN_EDICAO_MENU_LATERAL);
         clicarElementoXPATH(nomeEdicaoCadastrada);
         clicar(BTN_EXCLUIR_EDICAO);
-        clicar(BTN_EXCLUIR_EDICAO_CONFIRMAR);
+        clicarEsperandoSerClicavel(BTN_EXCLUIR_EDICAO_CONFIRMAR);
+    }
+
+    public void excluirEdicaoComSucessoRetornandoEdicao(String nomeEdicaoCadastrada) {
+        clicar(BTN_EDICAO_MENU_LATERAL);
+        clicarElementoXPATH(nomeEdicaoCadastrada);
+        clicar(BTN_EXCLUIR_EDICAO);
+        clicarEsperandoSerClicavel(BTN_EXCLUIR_EDICAO_CONFIRMAR);
     }
 }
