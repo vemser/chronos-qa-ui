@@ -7,6 +7,8 @@ import org.openqa.selenium.By;
 public class TrilhaPage extends BasePage {
 
     private static final By BTN_ABA_TRILHAS = By.cssSelector("div#root a:nth-child(6) > li > div > p");
+    private static final By BTN_ABA_TRILHAS2 = By.cssSelector("#root > section > div > div > div > nav > ul > div:nth-child(1) > a:nth-child(6) > li > div > p");
+    private static final By BTN_CADASTRAR_TRILHA2 = By.cssSelector("#root > section > section > div > button");
     private static final By BTN_ADICIONAR_TRILHA = By.cssSelector("div#root section > div > button");
     private static final By TEXT_VALIDAR_ABA_TRILHA = By.cssSelector("div#root section > h2");
     private static final By INPUT_NOME_TRILHA = By.cssSelector("input[name=\"nome\"]");
@@ -36,6 +38,12 @@ public class TrilhaPage extends BasePage {
         String validarCadastroSucesso = lerTexto(TEXT_VALIDAR_CADASTRO);
         Assertions.assertTrue(validarCadastroSucesso.contains(formDTO.getNomeTrilha()));
 
+    }
+
+    public void cadastrarTrilhaComSucessoParaEstagiario(TrilhaCadastroDTO formDTO) {
+        clicar(BTN_ABA_TRILHAS2);
+        clicar(BTN_CADASTRAR_TRILHA2);
+        enviarFormulario(formDTO.getNomeTrilha(), formDTO.getDescricao());
     }
 
     public void cadastrarTrilhaSemNome(TrilhaCadastroDTO formDTO) {

@@ -2,6 +2,7 @@ package chronos.page;
 
 
 import chronos.data.dto.EdicaoDTO;
+import chronos.data.dto.TrilhaCadastroDTO;
 import chronos.utils.FormatarData;
 import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.By;
@@ -16,9 +17,11 @@ public class EdicaoPage extends BasePage {
 
     private static final By BTN_EDICAO_MENU_LATERAL = By.cssSelector("div#root a:nth-child(5) > li > div > p");
     private static final By CAMPO_NOME = By.cssSelector("input#edicao-nome");
-
+    private static final By PRIMEIRA_TRILHA_OPTION = By.cssSelector("#\\:r3h\\: > li:nth-child(1)");
+    private static final By SELECT_TRILHA = By.cssSelector("#\\:r3g\\:");
     private static final By CAMPO_DESCRICAO = By.cssSelector("input#edicao-descricao");
 
+    private static final By BTN_VINCULAR_TRILHA = By.cssSelector("#root > section > section > div.containerCardDetails > div:nth-child(6) > button");
     private static final By SELECT_DATA_INICIO = By.cssSelector("input#dataInicial");
 
     private static final By BTN_EXCLUIR_EDICAO = By.cssSelector("#root > section > section > div.containerCardDetails > div.containerInfosEdicao > div.containerButtons > button.custom-button.custom-button-color.custom-button-background-delete.custom-button-border-small.custom-button-width-medium.custom-button-hover-delete");
@@ -69,6 +72,13 @@ public class EdicaoPage extends BasePage {
         clicarEsperandoSerClicavel(BTN_EDITAR_EDICAO_CONFIRMAR);
     }
 
+    public void vincularTrilha(EdicaoDTO edicaoCadastrada) {
+        clicarEsperandoSerClicavel(BTN_EDICAO_MENU_LATERAL);
+        clicarElementoXPATH(edicaoCadastrada.getNome());
+        clicar(BTN_VINCULAR_TRILHA);
+        clicar(SELECT_TRILHA);
+        clicar((PRIMEIRA_TRILHA_OPTION));
+    }
 
     public void validarInformacoesCadastradasEdicao(EdicaoDTO edicaoCadastrada) {
         clicarElementoXPATH(edicaoCadastrada.getNome());
