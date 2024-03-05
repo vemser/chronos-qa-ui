@@ -103,9 +103,9 @@ public class AtualizarEtapaTest extends BaseTest {
     public void testAtualizarEtapaSemCampoDiasUteisSemSucesso(){
         clicarElementoXPATH(nomeEdicaoCadastrada);
         EtapaDTO etapaAAtualizar = etapaData.etapaComCampoDuracaoVazio();
-        etapaPage.cadastrarEtapaSemDuracaoDiasUteis(etapaAAtualizar);
+        etapaPage.atualizarEtapa(etapaAAtualizar);
         String mensagemDeErroNomeVazio = BasePage.lerTexto(MSG_ERROR_NOME);
-        Assertions.assertEquals("Campo de dias úteis é obrigatório", mensagemDeErroNomeVazio);
+        Assertions.assertEquals("A duração de dias úteis deve ser maior que zero!", mensagemDeErroNomeVazio);
         nomeEtapaCadastrada = etapaAAtualizar.getNome();
     };
 
@@ -117,7 +117,7 @@ public class AtualizarEtapaTest extends BaseTest {
     public void testAtualizarEtapaComCampoNomeComMaisDe50CaracteresSemSucesso(){
         clicarElementoXPATH(nomeEdicaoCadastrada);
         EtapaDTO etapaAAtualizar = etapaData.etapaComCampoNomeMaiorQue50Caracteres();
-        etapaPage.cadastrarEtapa(etapaAAtualizar);
+        etapaPage.atualizarEtapa(etapaAAtualizar);
         nomeEtapaCadastrada = etapaAAtualizar.getNome();
     };
 }

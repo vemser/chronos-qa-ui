@@ -13,7 +13,7 @@ public class EdicaoData {
     public EdicaoDTO edicaoDadosValidos() {
         EdicaoDTO edicaoDTO = new EdicaoDTO();
         edicaoDTO.setNome("Edicao:" + faker.letterify("??????????"));
-        edicaoDTO.setDataInicial(LocalDate.now());
+        edicaoDTO.setDataInicial(LocalDate.now().plusDays(1));
         edicaoDTO.setDescricao(faker.lorem().sentence());
         edicaoDTO.setDataFinal(LocalDate.now().plusMonths(2));
         edicaoDTO.setStatus("ATIVO");
@@ -24,7 +24,7 @@ public class EdicaoData {
     public EdicaoDTO edicaoSemNome() {
         EdicaoDTO edicaoDTO = new EdicaoDTO();
         edicaoDTO.setNome(StringUtils.EMPTY);
-        edicaoDTO.setDataInicial(LocalDate.now());
+        edicaoDTO.setDataInicial(LocalDate.now().plusDays(1));
         edicaoDTO.setDescricao(faker.lorem().sentence());
         edicaoDTO.setDataFinal(LocalDate.now().plusMonths(2));
         edicaoDTO.setStatus("ATIVO");
@@ -36,7 +36,7 @@ public class EdicaoData {
         EdicaoDTO edicaoDTO = new EdicaoDTO();
         edicaoDTO.setNome("Edicao:" + faker.letterify("???????????????????????????????????????????"));
         edicaoDTO.setDescricao(faker.lorem().sentence());
-        edicaoDTO.setDataInicial(LocalDate.now());
+        edicaoDTO.setDataInicial(LocalDate.now().plusDays(1));
         edicaoDTO.setDataFinal(LocalDate.now().plusMonths(2));
         edicaoDTO.setStatus("ATIVO");
         edicaoDTO.setCaminhoFoto("C:\\Users\\rapha\\projeto-final-api\\chronos-qa-ui\\src\\main\\resources\\images\\testejpg.jpg");
@@ -47,7 +47,7 @@ public class EdicaoData {
         EdicaoDTO edicaoDTO = new EdicaoDTO();
         edicaoDTO.setNome(faker.letterify("???"));
         edicaoDTO.setDescricao(faker.lorem().sentence());
-        edicaoDTO.setDataInicial(LocalDate.now());
+        edicaoDTO.setDataInicial(LocalDate.now().plusDays(1));
         edicaoDTO.setDataFinal(LocalDate.now().plusMonths(2));
         edicaoDTO.setStatus("ATIVO");
         edicaoDTO.setCaminhoFoto("C:\\Users\\rapha\\projeto-final-api\\chronos-qa-ui\\src\\main\\resources\\images\\testejpg.jpg");
@@ -58,7 +58,7 @@ public class EdicaoData {
         EdicaoDTO edicaoDTO = new EdicaoDTO();
         edicaoDTO.setNome("Edicao:" + faker.letterify("??????????"));
         edicaoDTO.setDescricao(faker.lorem().characters(256));
-        edicaoDTO.setDataInicial(LocalDate.now());
+        edicaoDTO.setDataInicial(LocalDate.now().plusDays(1));
         edicaoDTO.setDataFinal(LocalDate.now().plusMonths(2));
         edicaoDTO.setStatus("ATIVO");
         edicaoDTO.setCaminhoFoto("C:\\Users\\rapha\\projeto-final-api\\chronos-qa-ui\\src\\main\\resources\\images\\testejpg.jpg");

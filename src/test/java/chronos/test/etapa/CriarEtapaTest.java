@@ -114,7 +114,7 @@ public class CriarEtapaTest extends BaseTest {
         EtapaDTO etapaACadastrar = etapaData.etapaComCampoNomeMaiorQue50Caracteres();
         etapaPage.cadastrarEtapa(etapaACadastrar);
         String mensagemDeErroNomeVazio = BasePage.lerTexto(MSG_ERROR_NOME);
-        Assertions.assertEquals("O nome da Etapa deve ter menos de 50 letras", mensagemDeErroNomeVazio);
+        Assertions.assertEquals("O nome da Etapa deve ter menos de 20 letras", mensagemDeErroNomeVazio);
         nomeEtapaCadastrada = etapaACadastrar.getNome();
     };
 }

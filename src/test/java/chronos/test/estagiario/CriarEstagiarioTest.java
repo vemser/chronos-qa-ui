@@ -31,7 +31,7 @@ public class CriarEstagiarioTest extends BaseTest {
     EstagiarioPage estagiarioPage = new EstagiarioPage();
     EstagiarioData estagiarioData = new EstagiarioData();
 
-    public static final By CAMPO_NOME_ERROR = By.cssSelector("#\\:rt\\:-helper-text");
+    public static final By CAMPO_ERROR = By.xpath("//p[contains(@class, 'Mui-error')]");
 
     public static final By CAMPO_CIDADE_ERROR = By.cssSelector("#\\:r13\\:-helper-text");
 
@@ -83,7 +83,7 @@ public class CriarEstagiarioTest extends BaseTest {
     public void testCriarEstagiarioComCampoNomeVazioSemSucesso(){
         EstagiarioDTO estagiarioACriar = estagiarioData.estagiarioSemCampoNome();
         estagiarioPage.cadastrarEstagiario(estagiarioACriar);
-        String mensagemDeErroNomeVazio = BasePage.lerTexto(CAMPO_NOME_ERROR);
+        String mensagemDeErroNomeVazio = BasePage.lerTexto(CAMPO_ERROR);
         Assertions.assertEquals("Campo Nome é obrigatório", mensagemDeErroNomeVazio);
     };
 
@@ -95,7 +95,7 @@ public class CriarEstagiarioTest extends BaseTest {
     public void testCriarEstagiarioComCampoCidadeVazioSemSucesso(){
         EstagiarioDTO estagiarioACriar = estagiarioData.estagiarioSemCampoCidade();
         estagiarioPage.cadastrarEstagiario(estagiarioACriar);
-        String mensagemDeErroNomeVazio = BasePage.lerTexto(CAMPO_CIDADE_ERROR);
+        String mensagemDeErroNomeVazio = BasePage.lerTexto(CAMPO_ERROR);
         Assertions.assertEquals("Campo Cidade é obrigatório", mensagemDeErroNomeVazio);
     };
 
@@ -107,7 +107,7 @@ public class CriarEstagiarioTest extends BaseTest {
     public void testCriarEstagiarioComCampoCPFVazioSemSucesso(){
         EstagiarioDTO estagiarioACriar = estagiarioData.estagiarioSemCampoCPF();
         estagiarioPage.cadastrarEstagiario(estagiarioACriar);
-        String mensagemDeErroNomeVazio = BasePage.lerTexto(CAMPO_CPF_ERROR);
+        String mensagemDeErroNomeVazio = BasePage.lerTexto(CAMPO_ERROR);
         Assertions.assertEquals("Campo CPF é obrigatório", mensagemDeErroNomeVazio);
     };
 
@@ -119,7 +119,7 @@ public class CriarEstagiarioTest extends BaseTest {
     public void testCriarEstagiarioComCampoCursoVazioSemSucesso(){
         EstagiarioDTO estagiarioACriar = estagiarioData.estagiarioSemCampoCurso();
         estagiarioPage.cadastrarEstagiario(estagiarioACriar);
-        String mensagemDeErroNomeVazio = BasePage.lerTexto(CAMPO_CURSO_ERROR);
+        String mensagemDeErroNomeVazio = BasePage.lerTexto(CAMPO_ERROR);
         Assertions.assertEquals("Campo Curso é obrigatório", mensagemDeErroNomeVazio);
     };
 
@@ -131,7 +131,7 @@ public class CriarEstagiarioTest extends BaseTest {
     public void testCriarEstagiarioComCampoDataNascimentoSemSucesso(){
         EstagiarioDTO estagiarioACriar = estagiarioData.estagiarioSemCampoDataDeNascimento();
         estagiarioPage.cadastrarEstagiarioSemDataNasc(estagiarioACriar);
-        String mensagemDeErroNomeVazio = BasePage.lerTexto(CAMPO_DATA_ERROR);
+        String mensagemDeErroNomeVazio = BasePage.lerTexto(CAMPO_ERROR);
         Assertions.assertEquals("Campo Data de Nascimento é obrigatório", mensagemDeErroNomeVazio);
     };
 
@@ -144,7 +144,7 @@ public class CriarEstagiarioTest extends BaseTest {
     public void testCriarEstagiarioSemCampoEstadoSemSucesso(){
         EstagiarioDTO estagiarioACriar = estagiarioData.estagiarioSemCampoEstado();
         estagiarioPage.cadastrarEstagiarioSemEstado(estagiarioACriar);
-        String mensagemDeErroNomeVazio = BasePage.lerTexto(CAMPO_ESTADO_ERROR);
+        String mensagemDeErroNomeVazio = BasePage.lerTexto(CAMPO_ERROR);
         Assertions.assertEquals("Campo Estado é obrigatório", mensagemDeErroNomeVazio);
     };
 
@@ -156,7 +156,7 @@ public class CriarEstagiarioTest extends BaseTest {
     public void testCriarEstagiarioSemCampoInstituicaoSemSucesso(){
         EstagiarioDTO estagiarioACriar = estagiarioData.estagiarioSemCampoInstituicao();
         estagiarioPage.cadastrarEstagiario(estagiarioACriar);
-        String mensagemDeErroNomeVazio = BasePage.lerTexto(CAMPO_INSTITUICAO_ERROR);
+        String mensagemDeErroNomeVazio = BasePage.lerTexto(CAMPO_ERROR);
         Assertions.assertEquals("Campo Instituição de Ensino é obrigatório", mensagemDeErroNomeVazio);
     };
 
@@ -168,7 +168,7 @@ public class CriarEstagiarioTest extends BaseTest {
     public void testCriarEstagiarioSemCampoStatusoSemSucesso(){
         EstagiarioDTO estagiarioACriar = estagiarioData.estagiarioSemCampoStatus();
         estagiarioPage.cadastrarEstagiarioSemStatus(estagiarioACriar);
-        String mensagemDeErroNomeVazio = BasePage.lerTexto(CAMPO_STATUS_ERROR);
+        String mensagemDeErroNomeVazio = BasePage.lerTexto(CAMPO_ERROR);
         Assertions.assertEquals("Campo Status é obrigatório", mensagemDeErroNomeVazio);
     };
 
@@ -180,7 +180,7 @@ public class CriarEstagiarioTest extends BaseTest {
     public void testCriarEstagiarioSemCampoTelefoneSemSucesso(){
         EstagiarioDTO estagiarioACriar = estagiarioData.estagiarioSemCampoTelefone();
         estagiarioPage.cadastrarEstagiario(estagiarioACriar);
-        String mensagemDeErroNomeVazio = BasePage.lerTexto(CAMPO_TELEFONE_ERROR);
+        String mensagemDeErroNomeVazio = BasePage.lerTexto(CAMPO_ERROR);
         Assertions.assertEquals("Campo Telefone é obrigatório", mensagemDeErroNomeVazio);
     };
 
@@ -192,7 +192,7 @@ public class CriarEstagiarioTest extends BaseTest {
     public void testCriarEstagiarioSemCampoEmailCorporativoSemSucesso(){
         EstagiarioDTO estagiarioACriar = estagiarioData.estagiarioSemCampoEmailCorporativo();
         estagiarioPage.cadastrarEstagiario(estagiarioACriar);
-        String mensagemDeErroNomeVazio = BasePage.lerTexto(CAMPO_EMAIL_CORPORATIVO);
+        String mensagemDeErroNomeVazio = BasePage.lerTexto(CAMPO_ERROR);
         Assertions.assertEquals("Campo Email Corporativo é obrigatório", mensagemDeErroNomeVazio);
     };
 
@@ -204,7 +204,7 @@ public class CriarEstagiarioTest extends BaseTest {
     public void testCriarEstagiarioSemCampoEmailPessoalSemSucesso(){
         EstagiarioDTO estagiarioACriar = estagiarioData.estagiarioSemCampoEmailPessoal();
         estagiarioPage.cadastrarEstagiario(estagiarioACriar);
-        String mensagemDeErroNomeVazio = BasePage.lerTexto(CAMPO_EMAIL_PESSOAL);
+        String mensagemDeErroNomeVazio = BasePage.lerTexto(CAMPO_ERROR);
         Assertions.assertEquals("Campo Email Pessoal é obrigatório", mensagemDeErroNomeVazio);
     };
 }
