@@ -5,9 +5,9 @@ import org.openqa.selenium.By;
 public class ModuloPage extends BasePage {
 
 
-    private static final By btnModulo = By.cssSelector("#root > section > div.MuiDrawer-root.MuiDrawer-docked.css-1tu59u4 > div > div > nav > ul > div:nth-child(1) > a:nth-child(7) > li > div");
+    private static final By btnModulo = By.cssSelector("#link-modulos > li > div > p");
     private static final By telaModulo = By.cssSelector("#root > section > section > h2");
-    private static final By btnAdicionarModulo = By.cssSelector("#root > section > section > div.button > a > button");
+    private static final By btnAdicionarModulo = By.cssSelector("#root > section > section > div > div.MuiBox-root.css-o2ea32 > div.button > a > button");
     private static final By nomeModulo = By.cssSelector("#input-name");
 
     private static final By loginInstrutor = By.cssSelector("#input-instructor");
