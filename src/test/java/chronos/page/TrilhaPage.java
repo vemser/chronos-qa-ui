@@ -6,7 +6,7 @@ import org.openqa.selenium.By;
 
 public class TrilhaPage extends BasePage {
 
-    private static final By BTN_ABA_TRILHAS = By.cssSelector("div#root a:nth-child(6) > li > div > p");
+    private static final By BTN_ABA_TRILHAS = By.cssSelector("#link-trilhas > li > div > p");
     private static final By BTN_ABA_TRILHAS2 = By.cssSelector("#root > section > div > div > div > nav > ul > div:nth-child(1) > a:nth-child(6) > li > div > p");
     private static final By BTN_CADASTRAR_TRILHA2 = By.cssSelector("#root > section > section > div > button");
     private static final By BTN_ADICIONAR_TRILHA = By.cssSelector("div#root section > div > button");
@@ -16,17 +16,17 @@ public class TrilhaPage extends BasePage {
     private static final By BTN_CADASTRAR_TRILHA = By.cssSelector("#root > section > section > div > form > div > button");
     private static final By TEXT_VALIDAR_CADASTRO = By.cssSelector("#root > section > section > h2");
 
-    private static final By TEXT_MENSAGEM_NOME_INVALIDO = By.cssSelector("p[id=\":r1:-helper-text\"]");
+    private static final By TEXT_MENSAGEM_NOME_INVALIDO = By.cssSelector("#nomeTrilha-helper-text");
 
-    private static final By TEXT_MENSAGEM_NOME_EDICAO_INVALIDO = By.cssSelector("p[id=\":r8:-helper-text\"]");
+    private static final By TEXT_MENSAGEM_NOME_EDICAO_INVALIDO = By.cssSelector("#nomeTrilha-helper-text");
 
-    private static final By TEXT_MENSAGEM_DESCRICAO_256 = By.cssSelector("p[id=\":r2:-helper-text\"]");
+    private static final By TEXT_MENSAGEM_DESCRICAO_256 = By.cssSelector("#descricaoTrilha-helper-text");
 
-    private static final By TEXT_MENSAGEM_DESCRICAO_EDICAO_256 = By.cssSelector("p[id=\":r9:-helper-text\"]");
+    private static final By TEXT_MENSAGEM_DESCRICAO_EDICAO_256 = By.cssSelector("#descricaoTrilha-helper-text");
 
 
     private static final By BTN_SALVAR_EDICAO = By.xpath("//button[contains(.,'Editar')]");
-    private static final By BTN_EDITAR_TRILHA = By.xpath("//button[contains(.,'Editar Trilha')]");
+    private static final By BTN_EDITAR_TRILHA = By.cssSelector("#root > section > section > div > div.MuiBox-root.css-gg4vpm > div.MuiBox-root.css-14djjxx > button:nth-child(1)");
     private static final By BTN_DATIVAR_TRILHA = By.xpath("//button[contains(.,'Desativar Trillha')]");
 
     private static final By MSG_DESATIVA = By.cssSelector("#\\35  > div.Toastify__toast-body > div:nth-child(2)");
@@ -59,7 +59,7 @@ public class TrilhaPage extends BasePage {
     public void cadastrarTrilhaComSucesso(TrilhaCadastroDTO formDTO) {
         irParaFormularioTrilhas();
         enviarFormulario(formDTO.getNomeTrilha(), formDTO.getDescricao());
-
+        fecharPopup();
         clicarElementoXPATH(formDTO.getNomeTrilha());
         String validarCadastroSucesso = lerTexto(TEXT_VALIDAR_CADASTRO);
         Assertions.assertTrue(validarCadastroSucesso.contains(formDTO.getNomeTrilha()));
@@ -75,7 +75,7 @@ public class TrilhaPage extends BasePage {
     public void cadastrarTrilhaSemNome(TrilhaCadastroDTO formDTO) {
         irParaFormularioTrilhas();
         enviarFormulario(formDTO.getNomeTrilha(), formDTO.getDescricao());
-
+        esperarElementoSerVisivel(TEXT_MENSAGEM_NOME_INVALIDO);
         String mensagemErroNome = lerTexto(TEXT_MENSAGEM_NOME_INVALIDO);
         Assertions.assertEquals(mensagemErroNome, "Campo Nome é obrigatório");
     }
@@ -83,20 +83,19 @@ public class TrilhaPage extends BasePage {
     public void cadastrarTrilhaComDescricao256(TrilhaCadastroDTO formDTO) {
         irParaFormularioTrilhas();
         enviarFormulario(formDTO.getNomeTrilha(), formDTO.getDescricao());
-
+        esperarElementoSerVisivel(TEXT_MENSAGEM_DESCRICAO_256);
         String mensagemErroDescricao = lerTexto(TEXT_MENSAGEM_DESCRICAO_256);
         Assertions.assertEquals(mensagemErroDescricao, "A descrição da trilha deve ter no máximo 255 caracteres");
     }
     public void cadastrarTrilhaComNome50(TrilhaCadastroDTO formDTO) {
         irParaFormularioTrilhas();
         enviarFormulario(formDTO.getNomeTrilha(), formDTO.getDescricao());
-
+        esperarElementoSerVisivel(TEXT_MENSAGEM_NOME_INVALIDO);
         String mensagemErroDescricao = lerTexto(TEXT_MENSAGEM_NOME_INVALIDO);
         Assertions.assertEquals(mensagemErroDescricao, "O nome da trilha deve ter no máximo 50 caracteres");
     }
 
     public void editarTrilhaComSucesso(TrilhaCadastroDTO formDTO){
-        clicar(fecharPopup);
         irParaEditarTrilha();
         enviarFormularioEditado(formDTO.getNomeTrilha(), formDTO.getDescricao());
         clicar(BTN_SALVAR_EDICAO);
@@ -110,7 +109,6 @@ public class TrilhaPage extends BasePage {
     }
 
     public void editarTrilhaSemNome(TrilhaCadastroDTO formDTO) {
-        clicar(fecharPopup);
         irParaEditarTrilha();
         enviarFormularioEditado(formDTO.getNomeTrilha(), formDTO.getDescricao());
         //clicar(BTN_SALVAR_EDICAO);
@@ -119,7 +117,6 @@ public class TrilhaPage extends BasePage {
     }
 
     public void editarTrilhaComDescricao256(TrilhaCadastroDTO formDTO) {
-        clicar(fecharPopup);
         irParaEditarTrilha();
         enviarFormularioEditado(formDTO.getNomeTrilha(), formDTO.getDescricao());
         clicar(BTN_SALVAR_EDICAO);
@@ -127,7 +124,6 @@ public class TrilhaPage extends BasePage {
         Assertions.assertEquals("A descrição da trilha deve ter no máximo 255 caracteres", mensagemErroDescricao);
     }
     public void editarTrilhaComNome50(TrilhaCadastroDTO formDTO) {
-        clicar(fecharPopup);
         irParaEditarTrilha();
         enviarFormularioEditado(formDTO.getNomeTrilha(), formDTO.getDescricao());
         clicar(BTN_SALVAR_EDICAO);
@@ -136,13 +132,18 @@ public class TrilhaPage extends BasePage {
     }
 
     public void desativarTrilhaComSucesso(TrilhaCadastroDTO formDTO){
-        clicar(fecharPopup);
         desativar();
         esperarElementoSerVisivel(msgToast);
         String mensagemDesativada = lerTexto(msgToast);
         Assertions.assertEquals( "Trilha desativada com sucesso!", mensagemDesativada);
 
 
+    }
+
+    public void fecharPopup(){
+
+        esperarElementoSerVisivel(fecharPopup);
+        clicar(fecharPopup);
     }
 
 
