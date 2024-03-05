@@ -1,20 +1,23 @@
 package chronos.test;
 
 
+import chronos.data.factory.seleniumfactory.Elements;
 import chronos.data.factory.seleniumfactory.SeleniumService;
-import org.junit.After;
-import org.junit.Before;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 
 public class BaseTest {
     SeleniumService seleniumFactory = new SeleniumService();
 
-    @Before
+    @BeforeEach
     public void abrirNavegador() {
-        seleniumFactory.initBrowser("");
+        seleniumFactory.initBrowser("https://chronos-front-one.vercel.app");
     }
 
-    @After
-    public void fecharNavegador() {
+    @AfterEach
+    public void fecharNavegador() throws InterruptedException {
+        Thread.sleep(1000);
         seleniumFactory.tearDown();
     }
 }
