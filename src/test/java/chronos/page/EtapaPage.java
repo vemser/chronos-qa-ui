@@ -14,10 +14,10 @@ public class EtapaPage extends BasePage {
     public static final By INPUT_ORDEM_EXECUCAO = By.cssSelector("input#etapa-ordemExecucao");
 
     public static final By INPUT_DIAS_UTEIS = By.cssSelector("input#dataInicial");
-    public static final By BTN_CONFIRMAR_ATUALIZAR = By.cssSelector("#\\:re\\:");
+    public static final By BTN_CONFIRMAR_ATUALIZAR = By.cssSelector("#\\:ru\\:");
 
     public static final By INPUT_DIAS_UTEIS_EDITAR = By.cssSelector("#etapa-duracaoDiaUtil");
-    public static final By BTN_CADASTRAR_ETAPA_CONFIRMAR = By.cssSelector("#\\:ra\\:");
+    public static final By BTN_CADASTRAR_ETAPA_CONFIRMAR = By.cssSelector("#\\:rq\\:");
 
     public static final By BTN_EXIBIR_ETAPAS = By.cssSelector("#root > section > section > div.containerCardDetails > div.MuiTableContainer-root.css-13g00hf > table > thead > tr > th:nth-child(1) > button > svg");
     public static final By NOME_ETAPA_CADASTRADA = By.cssSelector("#root > section > section > div.containerCardDetails > div.MuiTableContainer-root.css-13g00hf > table > tbody > tr:nth-child(5) > td:nth-child(2)");

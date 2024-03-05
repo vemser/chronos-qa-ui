@@ -16,22 +16,22 @@ public class EstagiarioPage extends BasePage {
     public static final By SELECT_DATA = By.cssSelector("input[name=\"dataNascimento\"]");
     public static final By INPUT_LINKEDIN = By.cssSelector("input[name=\"linkedin\"]");
     public static final By INPUT_TELEFONE = By.cssSelector("input[name=\"telefone\"]");
-    public static final By SELECT_STATUS = By.cssSelector("#\\:r1a\\:");
-    public static final By SELECT_STATUS_ATUALIZAR = By.cssSelector("#\\:r1v\\:");
+    public static final By SELECT_STATUS = By.cssSelector("#\\:r1s\\:");
+    public static final By SELECT_STATUS_ATUALIZAR = By.cssSelector("#\\:r2h\\:");
     public static final By EMAIL_PESSOAL = By.cssSelector("input[name=\"emailPessoal\"]");
     public static final By OBSERVACAO = By.cssSelector("textarea[name=\"observacao\"]");
     public static final By INPUT_EMAIL_CORP = By.cssSelector("input[name=\"emailCorporativo\"]");
-    public static final By SELECT_EDICAO = By.cssSelector("#\\:r1d\\:");
+    public static final By SELECT_EDICAO = By.cssSelector("#\\:r1v\\:");
     public static final By SELECT_EDICAO_ATUALIZAR = By.cssSelector("#\\:r22\\:");
     public static final By btn1Edicao = By.xpath("//li[@data-value='1']");
-    public static final By SELECT_TRILHA = By.cssSelector("#\\:r1f\\:");
+    public static final By SELECT_TRILHA = By.cssSelector("#\\:r21\\:");
     public static final By SELECT_TRILHAR_ATUALIZAR = By.cssSelector("#\\:r24\\:");
     public static final By btn12Trilha = By.xpath("//li[@data-value='1']");
     private static final By btnDisponivel = By.xpath("//li[@data-value='DIS']");
     private static final By btnMG = By.xpath("//li[@data-value='MG']");
     public static final By INPUT_CIDADE = By.cssSelector("input[name=\"cidade\"]");
-    public static final By SELECT_ESTADO = By.cssSelector("#\\:r14\\:");
-    public static final By SELECT_ESTADO_ATUALIZAR = By.cssSelector("#\\:r1p\\:");
+    public static final By SELECT_ESTADO = By.cssSelector("#\\:r1m\\:");
+    public static final By SELECT_ESTADO_ATUALIZAR = By.cssSelector("#\\:r2b\\:");
     public static final By CADASTRAR_ESTAGIARIO = By.cssSelector("#root > section > section > div > div > form > div.MuiBox-root.css-kl1xo3 > button");
 
     public static final By BTN_DETALHES_ESTAGIARIO = By.cssSelector("#root > section > section > div > div > div.MuiDataGrid-main.css-opb0c2 > div:nth-child(2) > div > div > div > div:nth-child(1) > div:nth-child(6) > button > svg");

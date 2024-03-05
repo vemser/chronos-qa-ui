@@ -15,7 +15,7 @@ public class EdicaoPage extends BasePage {
 
     private static final By BTN_CADASTRAR_EDICAO = By.cssSelector("div#root section > div > button");
 
-    private static final By BTN_EDICAO_MENU_LATERAL = By.cssSelector("div#root a:nth-child(5) > li > div > p");
+    private static final By BTN_EDICAO_MENU_LATERAL = By.cssSelector("#link-edicoes > li > div > p");
     private static final By CAMPO_NOME = By.cssSelector("input#edicao-nome");
     private static final By PRIMEIRA_TRILHA_OPTION = By.cssSelector("#\\:r3h\\: > li:nth-child(1)");
     private static final By SELECT_TRILHA = By.cssSelector("#\\:r3g\\:");
@@ -26,7 +26,7 @@ public class EdicaoPage extends BasePage {
 
     private static final By BTN_EXCLUIR_EDICAO = By.cssSelector("#root > section > section > div.containerCardDetails > div.containerInfosEdicao > div.containerButtons > button.custom-button.custom-button-color.custom-button-background-delete.custom-button-border-small.custom-button-width-medium.custom-button-hover-delete");
 
-    private static final By BTN_EXCLUIR_EDICAO_CONFIRMAR = By.cssSelector("body > div.MuiModal-root.css-8ndowl > div.MuiBox-root.css-1hekq3v > div > button.custom-button.custom-button-color.custom-button-background-background.custom-button-border-small.custom-button-width-medium.custom-button-font-small");
+    private static final By BTN_EXCLUIR_EDICAO_CONFIRMAR = By.cssSelector("body > div.MuiModal-root.css-8ndowl > div.MuiBox-root.css-1hekq3v > div > button.custom-button.custom-button-color.custom-button-background-delete.custom-button-border-small.custom-button-width-medium.custom-button-font-small.custom-button-hover-delete");
 
     private static final By DESCRICAO_EDICAO = By.cssSelector("div#root p:nth-child(3) > span");
     private static final By NOME_EDICAO = By.cssSelector("#root > section > section > h2");
@@ -36,8 +36,8 @@ public class EdicaoPage extends BasePage {
     private static final By STATUS_EDICAO = By.cssSelector("div#root p:nth-child(4) > span");
     private static final By BTN_EDITAR_EDICAO = By.cssSelector("#root > section > section > div.containerCardDetails > div.containerInfosEdicao > div.containerButtons > button:nth-child(1)");
 
-    private static final By BTN_CRIAR_EDICAO = By.cssSelector("#\\:r6\\:");
-    private static final By BTN_EDITAR_EDICAO_CONFIRMAR = By.cssSelector("#\\:rc\\:");
+    private static final By BTN_CRIAR_EDICAO = By.cssSelector("#\\:re\\:");
+    private static final By BTN_EDITAR_EDICAO_CONFIRMAR = By.cssSelector("#\\:rs\\:");
     public void cadastrarEdicao(EdicaoDTO edicaoACadastrar) {
         clicar(BTN_EDICAO_MENU_LATERAL);
         clicar(BTN_CADASTRAR_EDICAO);
