@@ -1,18 +1,20 @@
 package chronos.data.factory.datafaker;
 
 import chronos.data.dto.EdicaoDTO;
+import chronos.utils.DataFakerGenerator;
 import net.datafaker.Faker;
 import org.apache.commons.lang3.StringUtils;
 
 import java.time.LocalDate;
+import java.util.Locale;
 
 public class EdicaoData {
 
-    private static final Faker faker = new Faker();
+    private static final Faker faker = new Faker(new Locale("pt-BR"));
 
     public EdicaoDTO edicaoDadosValidos() {
         EdicaoDTO edicaoDTO = new EdicaoDTO();
-        edicaoDTO.setNome("Edicao:" + faker.letterify("??????????"));
+        edicaoDTO.setNome(DataFakerGenerator.evento());
         edicaoDTO.setDataInicial(LocalDate.now().plusDays(1));
         edicaoDTO.setDescricao(faker.lorem().sentence());
         edicaoDTO.setDataFinal(LocalDate.now().plusMonths(2));

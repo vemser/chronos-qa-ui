@@ -10,7 +10,7 @@ import java.util.Properties;
 
 public class ConfigProperties {
     public static Properties properties;
-    private static String configPath = "C:\\Users\\rapha\\projeto-final-api\\chronos-qa-ui\\src\\main\\resources\\configsetting.properties";
+    private static String configPath = "src/main/resources/configsetting.properties";
     public static void initializePropertyFile(){
         properties = new Properties();
         try {

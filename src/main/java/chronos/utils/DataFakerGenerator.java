@@ -2,9 +2,11 @@ package chronos.utils;
 
 import net.datafaker.Faker;
 
+import java.util.Locale;
+
 public class DataFakerGenerator {
 
-    private static final Faker faker = new Faker();
+    private static final Faker faker = new Faker(new Locale("pt-BR"));
 
     public static String emailFaker() {
         return faker.internet().emailAddress();
@@ -50,7 +52,7 @@ public class DataFakerGenerator {
     public static String mensagemFaker() {
         return faker.lorem().sentence();
     }
-    public static String evento() { return faker.company().name() + faker.letterify("??"); }
+    public static String evento() { return faker.company().name() + " " + faker.numerify("##"); }
     public static String description() { return faker.lorem().sentence(); }
 
     public static String descricao256() { return faker.lorem().sentence(258);}

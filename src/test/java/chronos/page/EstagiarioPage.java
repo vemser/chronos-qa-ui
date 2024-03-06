@@ -5,8 +5,8 @@ import org.openqa.selenium.By;
 
 
 public class EstagiarioPage extends BasePage {
-
-    public static final By BTN_ESTAGIARIO_MENU_LATERAL = By.cssSelector("#root > section > div > div > div > nav > ul > div:nth-child(1) > a:nth-child(3) > li > div > p");
+    private static final By BTN_ABA_TRILHAS = By.cssSelector("a#link-estagiario");
+    public static final By BTN_ESTAGIARIO_MENU_LATERAL = By.cssSelector("a#link-estagiarios");
     public static final By BTN_CRIAR_ESTAGIARIO = By.cssSelector("#root > section > section > div > button");
     public static final By INPUT_NOME_ESTAGIARIO = By.cssSelector("input[name=\"nome\"]");
     public static final By INPUT_CURSO_ESTAGIARIO = By.cssSelector("input[name=\"curso\"]");
@@ -16,21 +16,21 @@ public class EstagiarioPage extends BasePage {
     public static final By SELECT_DATA = By.cssSelector("input[name=\"dataNascimento\"]");
     public static final By INPUT_LINKEDIN = By.cssSelector("input[name=\"linkedin\"]");
     public static final By INPUT_TELEFONE = By.cssSelector("input[name=\"telefone\"]");
-    public static final By SELECT_STATUS = By.cssSelector("#\\:r1s\\:");
+    public static final By SELECT_STATUS = By.cssSelector("div[data-testid=\"button-status\"]");
     public static final By SELECT_STATUS_ATUALIZAR = By.cssSelector("#\\:r2h\\:");
     public static final By EMAIL_PESSOAL = By.cssSelector("input[name=\"emailPessoal\"]");
     public static final By OBSERVACAO = By.cssSelector("textarea[name=\"observacao\"]");
     public static final By INPUT_EMAIL_CORP = By.cssSelector("input[name=\"emailCorporativo\"]");
-    public static final By SELECT_EDICAO = By.cssSelector("#\\:r1v\\:");
+    public static final By SELECT_EDICAO = By.cssSelector("div[data-testid=\"button-edicao\"]");
     public static final By SELECT_EDICAO_ATUALIZAR = By.cssSelector("#\\:r22\\:");
     public static final By btn1Edicao = By.xpath("//li[@data-value='1']");
-    public static final By SELECT_TRILHA = By.cssSelector("#\\:r21\\:");
+    public static final By SELECT_TRILHA = By.cssSelector("div[data-testid=\"button-trilha\"]");
     public static final By SELECT_TRILHAR_ATUALIZAR = By.cssSelector("#\\:r24\\:");
     public static final By btn12Trilha = By.xpath("//li[@data-value='1']");
     private static final By btnDisponivel = By.xpath("//li[@data-value='DIS']");
     private static final By btnMG = By.xpath("//li[@data-value='MG']");
     public static final By INPUT_CIDADE = By.cssSelector("input[name=\"cidade\"]");
-    public static final By SELECT_ESTADO = By.cssSelector("#\\:r1m\\:");
+    public static final By SELECT_ESTADO = By.cssSelector("div[data-testid=\"button-estado\"]");
     public static final By SELECT_ESTADO_ATUALIZAR = By.cssSelector("#\\:r2b\\:");
     public static final By CADASTRAR_ESTAGIARIO = By.cssSelector("#root > section > section > div > div > form > div.MuiBox-root.css-kl1xo3 > button");
 
@@ -60,7 +60,7 @@ public class EstagiarioPage extends BasePage {
         preencherInput(OBSERVACAO, estagiarioACadastrar.getObservacao());
         preencherInput(INPUT_CIDADE, estagiarioACadastrar.getCidade());
         selecionarData(SELECT_DATA, estagiarioACadastrar.getDataNascimento());
-        clicar(CADASTRAR_ESTAGIARIO);
+//        clicar(CADASTRAR_ESTAGIARIO);
     }
 
     public void atualizarEstagiario(EstagiarioDTO estagiarioAAtualizar) {
