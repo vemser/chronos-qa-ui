@@ -42,6 +42,11 @@ public class TrilhaPage extends BasePage {
         clicar(BTN_ADICIONAR_TRILHA);
     }
 
+    public void irParaFormularioTrilhasE2E() {
+        clicar(BTN_ABA_TRILHAS);
+        clicar(BTN_ADICIONAR_TRILHA);
+    }
+
     public void irParaEditarTrilha(){
         esperarElementoSerClicavel(BTN_EDITAR_TRILHA);
         clicar(BTN_EDITAR_TRILHA);
@@ -65,6 +70,11 @@ public class TrilhaPage extends BasePage {
         String validarCadastroSucesso = lerTexto(TEXT_VALIDAR_CADASTRO);
         Assertions.assertTrue(validarCadastroSucesso.contains(formDTO.getNomeTrilha()));
 
+    }
+
+    public void cadastrarTrilhaComSucessoE2E(TrilhaCadastroDTO formDTO) {
+        enviarFormulario(formDTO.getNomeTrilha(), formDTO.getDescricao());
+        fecharPopup();
     }
 
     public void cadastrarTrilhaComSucessoParaEstagiario(TrilhaCadastroDTO formDTO) {

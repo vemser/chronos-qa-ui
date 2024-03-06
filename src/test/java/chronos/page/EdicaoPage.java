@@ -35,7 +35,7 @@ public class EdicaoPage extends BasePage {
     private static final By STATUS_EDICAO = By.cssSelector("div#root p:nth-child(4) > span");
     private static final By BTN_EDITAR_EDICAO = By.cssSelector("#root > section > section > div.containerCardDetails > div.containerInfosEdicao > div.containerButtons > button:nth-child(1)");
 
-    private static final By BTN_CRIAR_EDICAO = By.cssSelector("#\\:re\\:");
+    private static final By BTN_CRIAR_EDICAO = By.cssSelector("[data-testid='create-edicao-button']");
     private static final By BTN_EDITAR_EDICAO_CONFIRMAR = By.cssSelector("#\\:rs\\:");
     public void cadastrarEdicao(EdicaoDTO edicaoACadastrar) {
         clicar(BTN_EDICAO_MENU_LATERAL);
@@ -43,7 +43,7 @@ public class EdicaoPage extends BasePage {
         preencherInput(CAMPO_NOME, edicaoACadastrar.getNome());
         preencherInput(CAMPO_DESCRICAO, edicaoACadastrar.getDescricao());
         selecionarData(SELECT_DATA_INICIO, edicaoACadastrar.getDataInicial());
-//        clicarEsperandoSerClicavel(BTN_CRIAR_EDICAO);
+        clicarEsperandoSerClicavel(BTN_CRIAR_EDICAO);
     }
 
     public void atualizarEdicao(EdicaoDTO edicaoAAtualizar, String nomeEdicaoCadastrada) {

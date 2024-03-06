@@ -14,7 +14,7 @@ public class EtapaPage extends BasePage {
     public static final By INPUT_ORDEM_EXECUCAO = By.cssSelector("input#etapa-ordemExecucao");
 
     public static final By INPUT_DIAS_UTEIS = By.cssSelector("input#dataInicial");
-    public static final By BTN_CONFIRMAR_ATUALIZAR = By.cssSelector("#\\:ru\\:");
+    public static final By BTN_CONFIRMAR_ATUALIZAR = By.cssSelector("[data-testid='button-edit-etapa']");
 
     public static final By INPUT_DIAS_UTEIS_EDITAR = By.cssSelector("#etapa-duracaoDiaUtil");
     public static final By BTN_CADASTRAR_ETAPA_CONFIRMAR = By.cssSelector("#\\:rq\\:");
@@ -27,6 +27,10 @@ public class EtapaPage extends BasePage {
     public static final By BTN_CONFIRMAR_EXCLUIR_ETAPA = By.cssSelector("body > div.MuiModal-root.css-8ndowl > div.MuiBox-root.css-1hekq3v > div > button.custom-button.custom-button-color.custom-button-background-primary.custom-button-border-small.custom-button-width-medium");
     public static final By BTN_EXCLUIR_ETAPA = By.cssSelector("#root > section > section > div.containerCardDetails > div.MuiTableContainer-root.css-13g00hf > table > tbody > tr:nth-child(4) > td:nth-child(7) > button > svg");
     public static final By BTN_EDITAR_ETAPA = By.cssSelector("#root > section > section > div.containerCardDetails > div.MuiTableContainer-root.css-13g00hf > table > tbody > tr:nth-child(5) > td:nth-child(6) > button > svg");
+    public static final By BTN_EDITAR_ETAPA_1 = By.cssSelector("#root > section > section > div.containerCardDetails > div.MuiTableContainer-root.css-13g00hf > table > tbody > tr:nth-child(1) > td:nth-child(6) > button > svg");
+    public static final By BTN_EDITAR_ETAPA_2 = By.cssSelector("#root > section > section > div.containerCardDetails > div.MuiTableContainer-root.css-13g00hf > table > tbody > tr:nth-child(2) > td:nth-child(6) > button > svg");
+    public static final By BTN_EDITAR_ETAPA_3 = By.cssSelector("#root > section > section > div.containerCardDetails > div.MuiTableContainer-root.css-13g00hf > table > tbody > tr:nth-child(3) > td:nth-child(6) > button > svg");
+    public static final By BTN_EDITAR_ETAPA_4 = By.cssSelector("#root > section > section > div.containerCardDetails > div.MuiTableContainer-root.css-13g00hf > table > tbody > tr:nth-child(4) > td:nth-child(6) > button > svg");
     public void cadastrarEtapa(EtapaDTO etapaACadastrar) {
         clicar(BTN_CADASTRAR_ETAPA);
         preencherInput(INPUT_NOME_ETAPA, etapaACadastrar.getNome());
@@ -40,6 +44,32 @@ public class EtapaPage extends BasePage {
         clicar(BTN_EDITAR_ETAPA);
         preencherInput(INPUT_NOME_ETAPA, etapaAAtualizar.getNome());
         preencherInput(INPUT_ORDEM_EXECUCAO, String.valueOf(etapaAAtualizar.getOrdemExecucao()));
+        preencherInput(INPUT_DIAS_UTEIS_EDITAR, String.valueOf(etapaAAtualizar.getDuracaoDiaUtil()));
+        clicarEsperandoSerClicavel(BTN_CONFIRMAR_ATUALIZAR);
+    }
+
+    public void atualizarEtapa1EndToEnd(EtapaDTO etapaAAtualizar) {
+        clicar(BTN_EXIBIR_ETAPAS);
+        clicar(BTN_EDITAR_ETAPA_1);
+        preencherInput(INPUT_DIAS_UTEIS_EDITAR, String.valueOf(etapaAAtualizar.getDuracaoDiaUtil()));
+        clicarEsperandoSerClicavel(BTN_CONFIRMAR_ATUALIZAR);
+    }
+
+    public void atualizarEtapa2EndToEnd(EtapaDTO etapaAAtualizar) {
+        clicar(BTN_EXIBIR_ETAPAS);
+        clicar(BTN_EDITAR_ETAPA_1);
+        preencherInput(INPUT_DIAS_UTEIS_EDITAR, String.valueOf(etapaAAtualizar.getDuracaoDiaUtil()));
+        clicarEsperandoSerClicavel(BTN_CONFIRMAR_ATUALIZAR);
+    }
+    public void atualizarEtapa3EndToEnd(EtapaDTO etapaAAtualizar) {
+        clicar(BTN_EXIBIR_ETAPAS);
+        clicar(BTN_EDITAR_ETAPA_1);
+        preencherInput(INPUT_DIAS_UTEIS_EDITAR, String.valueOf(etapaAAtualizar.getDuracaoDiaUtil()));
+        clicarEsperandoSerClicavel(BTN_CONFIRMAR_ATUALIZAR);
+    }
+    public void atualizarEtapa4EndToEnd(EtapaDTO etapaAAtualizar) {
+        clicar(BTN_EXIBIR_ETAPAS);
+        clicar(BTN_EDITAR_ETAPA_1);
         preencherInput(INPUT_DIAS_UTEIS_EDITAR, String.valueOf(etapaAAtualizar.getDuracaoDiaUtil()));
         clicarEsperandoSerClicavel(BTN_CONFIRMAR_ATUALIZAR);
     }

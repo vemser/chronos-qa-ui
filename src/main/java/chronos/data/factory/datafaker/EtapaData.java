@@ -18,6 +18,27 @@ public class EtapaData {
         return etapaDTO;
     }
 
+    public EtapaDTO etapaDadosValidosEndToEnd1() {
+        EtapaDTO etapaDTO = new EtapaDTO();
+        etapaDTO.setDuracaoDiaUtil(20);
+        return etapaDTO;
+    }
+    public EtapaDTO etapaDadosValidosEndToEnd2() {
+        EtapaDTO etapaDTO = new EtapaDTO();
+        etapaDTO.setDuracaoDiaUtil(20);
+        return etapaDTO;
+    }
+    public EtapaDTO etapaDadosValidosEndToEnd3() {
+        EtapaDTO etapaDTO = new EtapaDTO();
+        etapaDTO.setDuracaoDiaUtil(20);
+        return etapaDTO;
+    }
+    public EtapaDTO etapaDadosValidosEndToEnd4() {
+        EtapaDTO etapaDTO = new EtapaDTO();
+        etapaDTO.setDuracaoDiaUtil(faker.random().nextInt(1, 10));
+        return etapaDTO;
+    }
+
     public EtapaDTO etapaComCampoNomeVazio() {
         EtapaDTO etapaDTO = new EtapaDTO();
         etapaDTO.setNome(StringUtils.EMPTY);

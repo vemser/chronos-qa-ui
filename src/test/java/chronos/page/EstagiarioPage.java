@@ -1,6 +1,8 @@
 package chronos.page;
 
+import chronos.data.dto.EdicaoDTO;
 import chronos.data.dto.EstagiarioDTO;
+import chronos.data.dto.TrilhaCadastroDTO;
 import org.openqa.selenium.By;
 
 
@@ -61,6 +63,32 @@ public class EstagiarioPage extends BasePage {
         preencherInput(INPUT_CIDADE, estagiarioACadastrar.getCidade());
         selecionarData(SELECT_DATA, estagiarioACadastrar.getDataNascimento());
 //        clicar(CADASTRAR_ESTAGIARIO);
+    }
+
+    public void cadastrarEstagiarioE2E(EstagiarioDTO estagiarioACadastrar, TrilhaCadastroDTO trilhaDoEstagiario, EdicaoDTO edicaoDoEstagiario) {
+        clicar(BTN_ESTAGIARIO_MENU_LATERAL);
+        clicar(BTN_CRIAR_ESTAGIARIO);
+        clicar(SELECT_STATUS);
+        clicar(btnDisponivel);
+        clicar(SELECT_ESTADO);
+        clicar(btnMG);
+        clicar(SELECT_EDICAO);
+        clicarElementoXPATH(edicaoDoEstagiario.getNome());
+        clicar(SELECT_TRILHA);
+        clicarElementoXPATH(trilhaDoEstagiario.getNomeTrilha());
+        preencherInput(INPUT_NOME_ESTAGIARIO, estagiarioACadastrar.getNome());
+        preencherInput(INPUT_CURSO_ESTAGIARIO, estagiarioACadastrar.getCurso());
+        preencherInput(INPUT_CPF, estagiarioACadastrar.getCPF());
+        preencherInput(INPUT_INSTITUICAO, estagiarioACadastrar.getInstituicao());
+        preencherInput(INPUT_GITHUB, estagiarioACadastrar.getGithub());
+        preencherInput(INPUT_LINKEDIN, estagiarioACadastrar.getLinkedin());
+        preencherInput(INPUT_TELEFONE, estagiarioACadastrar.getTelefone());
+        preencherInput(EMAIL_PESSOAL, estagiarioACadastrar.getEmailPessoal());
+        preencherInput(INPUT_EMAIL_CORP, estagiarioACadastrar.getEmailCorporativo());
+        preencherInput(OBSERVACAO, estagiarioACadastrar.getObservacao());
+        preencherInput(INPUT_CIDADE, estagiarioACadastrar.getCidade());
+        selecionarData(SELECT_DATA, estagiarioACadastrar.getDataNascimento());
+        clicar(CADASTRAR_ESTAGIARIO);
     }
 
     public void atualizarEstagiario(EstagiarioDTO estagiarioAAtualizar) {

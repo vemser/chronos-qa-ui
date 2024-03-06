@@ -23,6 +23,17 @@ public class EdicaoData {
         return edicaoDTO;
     }
 
+    public EdicaoDTO edicaoDadosValidosEndToEnd() {
+        EdicaoDTO edicaoDTO = new EdicaoDTO();
+        edicaoDTO.setNome("Vem Ser" + " " + faker.numerify("##"));
+        edicaoDTO.setDataInicial(LocalDate.now().plusDays(1));
+        edicaoDTO.setDescricao("Vem Ser DBC é um programa de aceleração de conhecimento técnico. Trata-se de uma jornada exigente, com mais de 2.700 pessoas inscritas na última edição e 40 inscritos em média por vaga, com profissionais de várias localidades do Brasil.");
+        edicaoDTO.setDataFinal(LocalDate.now().plusMonths(2));
+        edicaoDTO.setStatus("ATIVO");
+        edicaoDTO.setCaminhoFoto("C:\\Users\\rapha\\projeto-final-api\\chronos-qa-ui\\src\\main\\resources\\images\\testejpg.jpg");
+        return edicaoDTO;
+    }
+
     public EdicaoDTO edicaoSemNome() {
         EdicaoDTO edicaoDTO = new EdicaoDTO();
         edicaoDTO.setNome(StringUtils.EMPTY);
