@@ -6,13 +6,13 @@ import org.openqa.selenium.By;
 
 public class TrilhaPage extends BasePage {
 
-    private static final By BTN_ABA_TRILHAS = By.cssSelector("#link-trilhas > li > div > p");
+    private static final By BTN_ABA_TRILHAS = By.cssSelector("a#link-trilhas");
     private static final By BTN_ABA_TRILHAS2 = By.cssSelector("#root > section > div > div > div > nav > ul > div:nth-child(1) > a:nth-child(6) > li > div > p");
     private static final By BTN_CADASTRAR_TRILHA2 = By.cssSelector("#root > section > section > div > button");
-    private static final By BTN_ADICIONAR_TRILHA = By.cssSelector("div#root section > div > button");
+    private static final By BTN_ADICIONAR_TRILHA = By.cssSelector("#root > section > section > div.MuiBox-root.css-o2ea32 > button");
     private static final By TEXT_VALIDAR_ABA_TRILHA = By.cssSelector("div#root section > h2");
-    private static final By INPUT_NOME_TRILHA = By.cssSelector("input[name=\"nome\"]");
-    private static final By INPUT_DESCRICAO_TRILHA = By.cssSelector("input[name=\"descricao\"]");
+    private static final By INPUT_NOME_TRILHA = By.cssSelector("input#nomeTrilha");
+    private static final By INPUT_DESCRICAO_TRILHA = By.cssSelector("input#descricaoTrilha");
     private static final By BTN_CADASTRAR_TRILHA = By.cssSelector("#root > section > section > div > form > div > button");
     private static final By TEXT_VALIDAR_CADASTRO = By.cssSelector("#root > section > section > h2");
 
@@ -34,6 +34,7 @@ public class TrilhaPage extends BasePage {
     private static final By msgToast = By.xpath("//div[@role='alert']//div[2]");
 
     private static final By fecharPopup = By.xpath("//button[@aria-label='close']");
+
     public void irParaFormularioTrilhas() {
         clicar(BTN_ABA_TRILHAS);
         String validateAbaTrilhas = lerTextoVisivel(TEXT_VALIDAR_ABA_TRILHA);
@@ -141,7 +142,6 @@ public class TrilhaPage extends BasePage {
     }
 
     public void fecharPopup(){
-
         esperarElementoSerVisivel(fecharPopup);
         clicar(fecharPopup);
     }

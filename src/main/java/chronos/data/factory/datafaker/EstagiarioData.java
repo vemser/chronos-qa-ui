@@ -14,7 +14,7 @@ public class EstagiarioData {
 
     public EstagiarioDTO estagiarioDadosValidos() {
         EstagiarioDTO estagiarioDTO = new EstagiarioDTO();
-        estagiarioDTO.setNome("Estagiario:" + FAKER.letterify("??????????"));
+        estagiarioDTO.setNome(FAKER.name().firstName() + " "  + FAKER.name().lastName() + " "  + FAKER.name().nameWithMiddle());
         estagiarioDTO.setCPF(FAKER.cpf().valid(false));
         estagiarioDTO.setEmailPessoal(FAKER.internet().emailAddress());
         estagiarioDTO.setEmailCorporativo(FAKER.internet().emailAddress());

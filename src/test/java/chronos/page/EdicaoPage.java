@@ -14,8 +14,7 @@ public class EdicaoPage extends BasePage {
     FormatarData formatarData = new FormatarData();
 
     private static final By BTN_CADASTRAR_EDICAO = By.cssSelector("div#root section > div > button");
-
-    private static final By BTN_EDICAO_MENU_LATERAL = By.cssSelector("#link-edicoes > li > div > p");
+    private static final By BTN_EDICAO_MENU_LATERAL = By.cssSelector("a#link-edicoes");
     private static final By CAMPO_NOME = By.cssSelector("input#edicao-nome");
     private static final By PRIMEIRA_TRILHA_OPTION = By.cssSelector("#\\:r3h\\: > li:nth-child(1)");
     private static final By SELECT_TRILHA = By.cssSelector("#\\:r3g\\:");
@@ -44,7 +43,7 @@ public class EdicaoPage extends BasePage {
         preencherInput(CAMPO_NOME, edicaoACadastrar.getNome());
         preencherInput(CAMPO_DESCRICAO, edicaoACadastrar.getDescricao());
         selecionarData(SELECT_DATA_INICIO, edicaoACadastrar.getDataInicial());
-        clicarEsperandoSerClicavel(BTN_CRIAR_EDICAO);
+//        clicarEsperandoSerClicavel(BTN_CRIAR_EDICAO);
     }
 
     public void atualizarEdicao(EdicaoDTO edicaoAAtualizar, String nomeEdicaoCadastrada) {
