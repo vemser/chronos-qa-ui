@@ -61,6 +61,12 @@ public class TrilhaPage extends BasePage {
         preencherInput(INPUT_DESCRICAO_TRILHA, descricao);
         clicar(BTN_CADASTRAR_TRILHA);
     }
+    public void enviarFormularioE2E(String nome, String descricao, String path) {
+        preencherInput(INPUT_NOME_TRILHA, nome);
+        preencherInput(INPUT_DESCRICAO_TRILHA, descricao);
+        selecionarImagemTrilha(path);
+        clicar(BTN_CADASTRAR_TRILHA);
+    }
 
     public void cadastrarTrilhaComSucesso(TrilhaCadastroDTO formDTO) {
         irParaFormularioTrilhas();
@@ -73,7 +79,7 @@ public class TrilhaPage extends BasePage {
     }
 
     public void cadastrarTrilhaComSucessoE2E(TrilhaCadastroDTO formDTO) {
-        enviarFormulario(formDTO.getNomeTrilha(), formDTO.getDescricao());
+        enviarFormularioE2E(formDTO.getNomeTrilha(), formDTO.getDescricao(), formDTO.getCaminhoImagem());
         fecharPopup();
     }
 

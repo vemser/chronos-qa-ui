@@ -18,6 +18,33 @@ public class ModuloData {
         return moduloDTO;
 }
 
+    public ModuloDTO moduloFrontEnd() {
+        ModuloDTO moduloDTO = new ModuloDTO();
+        moduloDTO.setNomeDoModulo("HTML e CSS");
+        moduloDTO.setLoginDoInstrutorResponsavel(ConfigProperties.properties.getProperty("UserAdmin"));
+        moduloDTO.setConteudoProgramatico(dataFakerGenerator.mensagemFaker());
+
+        return moduloDTO;
+    }
+
+    public ModuloDTO moduloBackEnd() {
+        ModuloDTO moduloDTO = new ModuloDTO();
+        moduloDTO.setNomeDoModulo("Java orientado a objetos");
+        moduloDTO.setLoginDoInstrutorResponsavel(ConfigProperties.properties.getProperty("UserAdmin"));
+        moduloDTO.setConteudoProgramatico(dataFakerGenerator.mensagemFaker());
+
+        return moduloDTO;
+    }
+
+    public ModuloDTO moduloQA() {
+        ModuloDTO moduloDTO = new ModuloDTO();
+        moduloDTO.setNomeDoModulo("Teste de API Rest");
+        moduloDTO.setLoginDoInstrutorResponsavel(ConfigProperties.properties.getProperty("UserAdmin"));
+        moduloDTO.setConteudoProgramatico(dataFakerGenerator.mensagemFaker());
+
+        return moduloDTO;
+    }
+
     public ModuloDTO moduloNomeVazio() {
         ModuloDTO moduloDTO = new ModuloDTO();
         moduloDTO.setNomeDoModulo("");

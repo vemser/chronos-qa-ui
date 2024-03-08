@@ -16,19 +16,22 @@ public class TrilhaData {
     public static TrilhaCadastroDTO trilhaValidaFrontEnd() {
         return TrilhaCadastroDTO.builder()
                 .nomeTrilha("Front-end")
-                .descricao("Crie experiências digitais envolventes e visualmente atraentes. Através da trilha de front-end, você será responsável por transformar designs criativos em interfaces funcionais através da criação de sites e aplicativos de alto desempenho.")
+                .descricao("Crie experiências digitais envolventes e visualmente atraentes. Através da trilha de front-end, você será responsável por transformar designs criativos.")
+                .caminhoImagem("C:\\Users\\rapha\\projeto-final-api\\chronos-qa-ui\\src\\main\\resources\\images\\VemSer_Front.png")
                 .build();
     }
     public static TrilhaCadastroDTO trilhaValidaQA() {
         return TrilhaCadastroDTO.builder()
                 .nomeTrilha("QA")
-                .descricao("Especialize-se em Qualidade de Software. Na trilha de QA, você aprenderá e atuará com a garantia da qualidade de nossos produtos, trabalhando com testes detalhados, colaborando com uma equipe de desenvolvimento e automatizando processos.")
+                .descricao("Especialize-se em Qualidade de Software. Na trilha de QA, você aprenderá e atuará com a garantia da qualidade de nossos produtos, trabalhando com testes detalhados.")
+                .caminhoImagem("C:\\Users\\rapha\\projeto-final-api\\chronos-qa-ui\\src\\main\\resources\\images\\Vem_Ser_QA.png")
                 .build();
     }
     public static TrilhaCadastroDTO trilhaValidaBackEnd() {
         return TrilhaCadastroDTO.builder()
                 .nomeTrilha("Back-end")
-                .descricao("Torne-se um especialista em garantir que sistemas funcionem de forma eficiente, escalável e segura. Através da trilha de back-end, você irá atuar com lógica de servidor, gestão de bancos de dados, integração de serviços, implementação de medidas de segurança e otimização do desempenho.")
+                .descricao("Torne-se um especialista em garantir que sistemas funcionem de forma eficiente, escalável e segura. Através da trilha de back-end, você irá atuar com lógica de servidor, gestão de bancos de dados, integração de serviços.")
+                .caminhoImagem("C:\\Users\\rapha\\projeto-final-api\\chronos-qa-ui\\src\\main\\resources\\images\\VemSer_Back.png")
                 .build();
     }
     public static TrilhaCadastroDTO trilhaComNomeVazio() {

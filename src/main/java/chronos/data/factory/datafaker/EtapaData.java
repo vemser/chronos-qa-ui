@@ -35,7 +35,7 @@ public class EtapaData {
     }
     public EtapaDTO etapaDadosValidosEndToEnd4() {
         EtapaDTO etapaDTO = new EtapaDTO();
-        etapaDTO.setDuracaoDiaUtil(faker.random().nextInt(1, 10));
+        etapaDTO.setDuracaoDiaUtil(20);
         return etapaDTO;
     }
 

@@ -62,7 +62,7 @@ public class EstagiarioPage extends BasePage {
         preencherInput(OBSERVACAO, estagiarioACadastrar.getObservacao());
         preencherInput(INPUT_CIDADE, estagiarioACadastrar.getCidade());
         selecionarData(SELECT_DATA, estagiarioACadastrar.getDataNascimento());
-//        clicar(CADASTRAR_ESTAGIARIO);
+        clicar(CADASTRAR_ESTAGIARIO);
     }
 
     public void cadastrarEstagiarioE2E(EstagiarioDTO estagiarioACadastrar, TrilhaCadastroDTO trilhaDoEstagiario, EdicaoDTO edicaoDoEstagiario) {

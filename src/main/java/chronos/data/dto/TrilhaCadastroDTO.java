@@ -12,4 +12,5 @@ import lombok.NoArgsConstructor;
 public class TrilhaCadastroDTO {
     private String nomeTrilha;
     private String descricao;
+    private String caminhoImagem;
 }
